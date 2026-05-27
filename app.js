@@ -176,60 +176,15 @@ function spawnPetals() {
 
 // ── Interactive Cinematic Sound Synthesizer ─────────────────
 function playCinematicSound(type) {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-
-    if (type === 'chime') {
-      // Warm golden opening chime
-      const freqs = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
-      freqs.forEach((f, idx) => {
-        setTimeout(() => {
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(f, ctx.currentTime);
-
-          gain.gain.setValueAtTime(0.2, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.5);
-
-          osc.connect(gain);
-          gain.connect(ctx.destination);
-
-          osc.start();
-          osc.stop(ctx.currentTime + 1.5);
-        }, idx * 120);
-      });
-    } else if (type === 'magic') {
-      // Mystical ascending sweep for blowing candles
-      const notes = [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50, 1318.51];
-      notes.forEach((noteFreq, idx) => {
-        setTimeout(() => {
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(noteFreq, ctx.currentTime);
-
-          gain.gain.setValueAtTime(0.15, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.2);
-
-          osc.connect(gain);
-          gain.connect(ctx.destination);
-
-          osc.start();
-          osc.stop(ctx.currentTime + 1.2);
-        }, idx * 80);
-      });
-    }
-  } catch (err) {
-    console.log("Audio synthesis blocked or unsupported:", err);
-  }
+  // Sound effects have been removed at user request
 }
 
 // ── STEP 1: Gift Box Opening Interaction ─────────────────────
 function openGiftBox() {
   const boxWrap = document.getElementById('giftBoxWrap');
   if (!boxWrap || boxWrap.classList.contains('untied')) return;
+
+  requestFullscreenMode();
 
   boxWrap.classList.add('untied');
   playCinematicSound('chime');
@@ -328,6 +283,7 @@ function detectBlowing() {
 }
 
 function manualBlowCandles() {
+  requestFullscreenMode();
   extinguishCandles();
 }
 
@@ -423,6 +379,12 @@ function burstConfetti() {
 // ── Navigation ────────────────────────────────────────────────
 function navigateTo(page) {
   if (page === currentPage) return;
+
+  // Auto-close mobile menu on navigation
+  const nav = document.getElementById('bottomNav');
+  if (nav && nav.classList.contains('show-mobile')) {
+    toggleMobileMenu();
+  }
 
   // 🔒 PASSCODE LOCK INTERCEPT
   if (page !== 'home' && !isUnlocked) {
@@ -686,6 +648,56 @@ document.addEventListener('keydown', (e) => {
       pressKey('delete');
     } else if (e.key === 'Escape') {
       closeLockScreen();
+    }
+  }
+});
+
+// ── Cinematic Fullscreen & Mobile Navigation Logic ───────────────
+function requestFullscreenMode() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => {
+      console.log("Automatic fullscreen request deferred or blocked:", err);
+    });
+  }
+}
+
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => {
+      console.log(`Error attempting to enable fullscreen mode: ${err.message}`);
+    });
+  } else {
+    document.exitFullscreen().catch(err => {
+      console.log(`Error attempting to exit fullscreen mode: ${err.message}`);
+    });
+  }
+}
+
+function toggleMobileMenu() {
+  const nav = document.getElementById('bottomNav');
+  const toggleBtn = document.getElementById('mobileMenuToggle');
+  const toggleIcon = toggleBtn ? toggleBtn.querySelector('.toggle-icon') : null;
+  
+  if (nav) {
+    nav.classList.toggle('show-mobile');
+    if (toggleIcon) {
+      if (nav.classList.contains('show-mobile')) {
+        toggleIcon.textContent = '✖';
+      } else {
+        toggleIcon.textContent = '🌸';
+      }
+    }
+  }
+}
+
+// Sync fullscreen toggle icon on manual escape/exit
+document.addEventListener('fullscreenchange', () => {
+  const fsIcon = document.querySelector('.fs-icon');
+  if (fsIcon) {
+    if (document.fullscreenElement) {
+      fsIcon.textContent = '✖';
+    } else {
+      fsIcon.textContent = '⛶';
     }
   }
 });
