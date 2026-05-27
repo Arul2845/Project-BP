@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Pretty 🎀</title>
+  <meta name="description"
+    content="A cinematic, magical surprise birthday gift for Pretty's 21st Birthday. Made with love by Arul." />
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Parisienne&family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Cinematic Film Grain Overlay -->
+  <div class="grain"></div>
+
+  <!-- Custom Sparkle Heart Cursor -->
+  <div class="cursor" id="cursor">💖</div>
+
+  <!-- Global Ambient Falling Petals -->
+  <div class="petals-global" id="globalPetals"></div>
+
+  <!-- ══════════════════════════════════════════
+       🎬 CINEMATIC INTRO EXPERIENCE
+  ══════════════════════════════════════════ -->
+  <div class="intro-stage" id="introStage">
+
+    <!-- Ambient glowing lights -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <div class="intro-overlay-particles" id="introParticles"></div>
+
+    <!-- ================= STEP 1: GIFT BOX ================= -->
+    <div class="step-container active" id="step-gift">
+      <div class="intro-text-wrap">
+        <p class="intro-whisper reveal-text">Someone made this only for you...</p>
+      </div>
+
+      <div class="gift-scene">
+        <div class="gift-box-wrap" id="giftBoxWrap" onclick="openGiftBox()">
+          <div class="gift-box">
+            <div class="box-lid"></div>
+            <div class="box-body">
+              <div class="box-ribbon-v"></div>
+              <div class="box-ribbon-h"></div>
+            </div>
+            <!-- Beautiful 3D Textured Ribbon Bow -->
+            <div class="box-bow" id="boxBow">
+              <div class="bow-loop-l"></div>
+              <div class="bow-loop-r"></div>
+              <div class="bow-center"></div>
+              <div class="bow-tail-l"></div>
+              <div class="bow-tail-r"></div>
+            </div>
+          </div>
+          <div class="gift-shadow"></div>
+          <div class="gift-glow"></div>
+        </div>
+      </div>
+      <p class="tap-hint-text">✦ &nbsp; Tap the gift box to open &nbsp; ✦</p>
+    </div>
+
+    <!-- ================= STEP 2: BIRTHDAY CAKE ================= -->
+    <div class="step-container" id="step-cake">
+      <div class="cake-header">
+        <span class="cake-subtitle">Hey,</span>
+        <h2 class="cake-title-name">First candle ah blow pannu, surprise is next 🕯️</h2>
+      </div>
+
+      <div class="cake-scene">
+        <div class="spotlight"></div>
+        <div class="cake-wrap" id="cakeWrap" onclick="manualBlowCandles()">
+          <div class="cake">
+            <!-- Tier 1: Top Tier (with candles and berries decoration) -->
+            <div class="cake-layer layer-top">
+              <div class="cake-frosting"></div>
+
+              <!-- Whipped Cream Dollop Piping Rim -->
+              <div class="piping-rim top-tier">
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+              </div>
+
+              <!-- 3D Pearl Sprinkles scattered exactly like reference image -->
+              <div class="sprinkle color-pink" style="top: 15px; left: 15%;"></div>
+              <div class="sprinkle color-blue" style="top: 22px; left: 35%;"></div>
+              <div class="sprinkle color-yellow" style="top: 12px; right: 25%;"></div>
+              <div class="sprinkle color-orange" style="top: 28px; right: 12%;"></div>
+
+              <div class="cake-decorations">
+                <span class="berry">🍒</span>
+                <span class="berry">🍓</span>
+                <span class="berry">🍒</span>
+                <span class="gold-flake">✨</span>
+                <span class="gold-flake">✨</span>
+              </div>
+
+              <!-- Realistic Flickering Candles -->
+              <div class="candles-container">
+                <div class="candle candle-1">
+                  <div class="flame"></div>
+                  <div class="smoke"></div>
+                </div>
+                <div class="candle candle-2">
+                  <div class="flame"></div>
+                  <div class="smoke"></div>
+                </div>
+                <div class="candle candle-3">
+                  <div class="flame"></div>
+                  <div class="smoke"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tier 2: Middle Tier -->
+            <div class="cake-layer layer-middle">
+              <!-- Whipped Cream Dollop Piping Rim -->
+              <div class="piping-rim middle-tier">
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+              </div>
+
+              <!-- 3D Pearl Sprinkles -->
+              <div class="sprinkle color-pink" style="top: 14px; left: 10%;"></div>
+              <div class="sprinkle color-blue" style="top: 28px; left: 24%;"></div>
+              <div class="sprinkle color-yellow" style="top: 18px; left: 48%;"></div>
+              <div class="sprinkle color-orange" style="top: 32px; left: 68%;"></div>
+              <div class="sprinkle color-pink" style="top: 14px; right: 15%;"></div>
+              <div class="sprinkle color-blue" style="top: 26px; right: 8%;"></div>
+            </div>
+
+            <!-- Tier 3: Bottom Tier -->
+            <div class="cake-layer layer-bottom">
+              <!-- Whipped Cream Dollop Piping Rim -->
+              <div class="piping-rim bottom-tier">
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+                <div class="dollop"></div>
+              </div>
+
+              <!-- 3D Pearl Sprinkles scattered exactly like reference image -->
+              <div class="sprinkle color-pink" style="top: 15px; left: 8%;"></div>
+              <div class="sprinkle color-blue" style="top: 35px; left: 18%;"></div>
+              <div class="sprinkle color-yellow" style="top: 20px; left: 45%;"></div>
+              <div class="sprinkle color-orange" style="top: 40px; left: 62%;"></div>
+              <div class="sprinkle color-pink" style="top: 15px; right: 20%;"></div>
+              <div class="sprinkle color-blue" style="top: 32px; right: 8%;"></div>
+              <div class="sprinkle color-yellow" style="top: 42px; left: 32%;"></div>
+              <div class="sprinkle color-orange" style="top: 24px; left: 78%;"></div>
+            </div>
+          </div>
+          <div class="cake-stand"></div>
+          <div class="cake-shadow"></div>
+        </div>
+      </div>
+
+      <!-- Tap interaction instructions -->
+      <div class="blow-interface" id="blowInterface">
+        <p class="blow-tip" id="blowTip" style="font-size: 1.1rem; font-weight: 500; letter-spacing: 0.5px; color: #7d5a6b;">
+          ✦ &nbsp; Tap the candles to blow them out &nbsp; ✦
+        </p>
+      </div>
+    </div>
+
+    <!-- Magical Screen Light Burst Overlay -->
+    <div class="light-burst" id="lightBurst"></div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       ✨ MAIN STORIES PORTAL (Hidden until blown)
+  ══════════════════════════════════════════ -->
+  <main class="main-stories" id="mainStories">
+
+    <!-- Pages are loaded dynamically from the pages/ directory at runtime by app.js -->
+
+    <!-- ══════════════════════════════════════════
+         FIXED NAVIGATION & CORE CONTROLS
+    ══════════════════════════════════════════ -->
+    <nav class="bottom-nav" id="bottomNav" aria-label="Surprise Navigation">
+      <button class="nav-pill active" id="nav-home" onclick="navigateTo('home')">
+        <span class="nav-ico">🏠</span><span class="nav-lbl">Home</span>
+      </button>
+      <button class="nav-pill" id="nav-memories" onclick="navigateTo('memories')">
+        <span class="nav-ico">🌸</span><span class="nav-lbl">Memories</span>
+      </button>
+      <button class="nav-pill" id="nav-gallery" onclick="navigateTo('gallery')">
+        <span class="nav-ico">📷</span><span class="nav-lbl">Gallery</span>
+      </button>
+      <button class="nav-pill" id="nav-letter" onclick="navigateTo('letter')">
+        <span class="nav-ico">💌</span><span class="nav-lbl">Letter</span>
+      </button>
+    </nav>
+
+    <div class="dot-nav" id="dotNav" aria-label="Page dots selector">
+      <div class="dot active" onclick="navigateTo('home')" title="Home"></div>
+      <div class="dot" onclick="navigateTo('memories')" title="Memories"></div>
+      <div class="dot" onclick="navigateTo('gallery')" title="Gallery"></div>
+      <div class="dot" onclick="navigateTo('letter')" title="Letter"></div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       🔒 PASSCODE LOCK SCREEN OVERLAY
+  ══════════════════════════════════════════ -->
+  <div class="lock-screen-overlay" id="lockScreen">
+    <button class="lock-close-btn" onclick="closeLockScreen()">×</button>
+
+    <div class="lock-container">
+      <div class="lock-icon-wrap" id="lockIconWrap">
+        <span class="lock-padlock">🔒</span>
+      </div>
+
+      <h2 class="lock-title">Enter Secret Passcode</h2>
+      <p class="lock-hint">✦ Hint: our anniversary (DD/MM/YY) ✦</p>
+
+      <!-- 6 Indicator Dots -->
+      <div class="lock-dots-container" id="lockDots">
+        <div class="lock-dot"></div>
+        <div class="lock-dot"></div>
+        <div class="lock-dot"></div>
+        <div class="lock-dot"></div>
+        <div class="lock-dot"></div>
+        <div class="lock-dot"></div>
+      </div>
+
+      <!-- Keypad Grid -->
+      <div class="lock-keypad">
+        <button class="key-btn" onclick="pressKey('1')">1</button>
+        <button class="key-btn" onclick="pressKey('2')">2</button>
+        <button class="key-btn" onclick="pressKey('3')">3</button>
+        <button class="key-btn" onclick="pressKey('4')">4</button>
+        <button class="key-btn" onclick="pressKey('5')">5</button>
+        <button class="key-btn" onclick="pressKey('6')">6</button>
+        <button class="key-btn" onclick="pressKey('7')">7</button>
+        <button class="key-btn" onclick="pressKey('8')">8</button>
+        <button class="key-btn" onclick="pressKey('9')">9</button>
+        <button class="key-btn utility-btn" onclick="pressKey('C')">C</button>
+        <button class="key-btn" onclick="pressKey('0')">0</button>
+        <button class="key-btn utility-btn" onclick="pressKey('delete')">⌫</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Modal Viewer -->
+  <div class="photo-modal" id="photoModal" onclick="closePhotoModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="close-modal-btn" onclick="closePhotoModal()">×</button>
+      <img class="modal-image" id="modalImg" alt="expanded polaroid" />
+      <p class="modal-quote" id="modalQuote"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
