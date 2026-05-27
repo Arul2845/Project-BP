@@ -2454,9 +2454,12 @@ body {
 }
 
 @keyframes pulseBlossom {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1) rotate(0deg);
   }
+
   50% {
     transform: scale(1.1) rotate(15deg);
   }
@@ -2471,33 +2474,15 @@ body {
   transform: translateX(-50%) scale(0.94);
 }
 
-/* Make sure bottom-nav can slide cleanly on mobile */
+/* Make sure bottom-nav is visible and styled properly on mobile */
 @media (max-width: 768px) {
   .mobile-menu-toggle {
-    display: flex; /* Show only on mobile/tablets */
+    display: none !important;
   }
-
-  /* Slide bottom-nav down out of view by default on mobile */
   .bottom-nav {
-    transform: translate(-50%, 150%) scale(0.95) !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    transition: transform 0.5s var(--transition-spring), opacity 0.4s ease, visibility 0.4s ease;
-    visibility: hidden !important;
-  }
-
-  /* Slide bottom-nav up into view when toggled */
-  .bottom-nav.show-mobile {
     transform: translate(-50%, 0) scale(1) !important;
     opacity: 1 !important;
     pointer-events: all !important;
     visibility: visible !important;
-  }
-
-  /* Push mobile toggle up slightly when menu is open to sit nicely above it or change to a close icon */
-  .bottom-nav.show-mobile ~ .mobile-menu-toggle {
-    transform: translateX(-50%) translateY(-76px) scale(0.9);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(253, 238, 242, 0.95) 100%);
-    box-shadow: 0 4px 15px rgba(91, 46, 72, 0.1);
   }
 }
